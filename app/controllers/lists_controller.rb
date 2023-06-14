@@ -17,6 +17,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    @list = List.find(params[:id])  # Si no lo tienes un before action para encontrar la lista no puedes dejar el show
   end
 
   private
