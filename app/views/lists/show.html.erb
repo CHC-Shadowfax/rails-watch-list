@@ -3,9 +3,10 @@
 <%= render 'list', list: @list %>
 
 <p><strong>Bookmarks</strong></p>
-
+<%# <p><%= link_to "add bookmark" new_list_bookmark(@list)%></p>
 <ul class="list-group">
   <% @list.bookmarks.each do |bookmark| %>
+    <% raise  %>
     <li class="list-group-item"><%= bookmark.comment %></li>
 
   <% end %>
