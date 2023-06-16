@@ -3,11 +3,17 @@
 <%= render 'list', list: @list %>
 
 <p><strong>Bookmarks</strong></p>
-<%# <p><%= link_to "add bookmark" new_list_bookmark(@list)%></p>
+<p><%= link_to "add bookmark", new_list_bookmark_path(@list)%></p>
 <ul class="list-group">
   <% @list.bookmarks.each do |bookmark| %>
-    <% raise  %>
+    <%# <% raise  %>
     <li class="list-group-item"><%= bookmark.comment %></li>
+    <li class="list-group-item"><%= bookmark.movie.title %></li>
+    <%= link_to "Delete bookmark",
+    bookmark_path(bookmark),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+    <br>
 
   <% end %>
 </ul>
